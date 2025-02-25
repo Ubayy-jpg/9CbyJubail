@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall of Memes - Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="index.html">Index</a>
+      <a href="menu.html">Home/Menu</a>
+      <a href="generator-nama.html">Generator Nama</a>
+      <a href="kuis-anime.html">Kuis Anime</a>
+      <a href="wall-of-memes.html">Wall of Memes</a>
+      <a href="countdown-liburan.html">Countdown Liburan</a>
+      <a href="random-challenge.html">Random Challenge</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Wall of Memes</h1>
+    <div class="upload-section">
+      <h2>Tambahkan Meme Baru</h2>
+      <!-- Input untuk URL Gambar -->
+      <input type="text" id="input-url" placeholder="Tempel URL gambar di sini">
+      <button id="btn-tambah-url">Tambahkan dari URL</button>
+      <!-- Input untuk Upload Gambar -->
+      <input type="file" id="upload-meme" accept="image/*">
+      <button id="btn-upload">Upload Gambar</button>
+    </div>
+    <div id="meme-container" class="meme-grid"></div>
+  </div>
+
+  <script>
+    // Fungsi untuk menambahkan gambar dari URL
+    document.getElementById("btn-tambah-url").addEventListener("click", function () {
+      const url = document.getElementById("input-url").value.trim();
+      if (url) {
+        tambahkanGambar(url);
+      } else {
+        alert("Masukkan URL gambar yang valid!");
+      }
+    });
+
+    // Fungsi untuk upload gambar dari file
+    document.getElementById("btn-upload").addEventListener("click", function () {
+      const file = document.getElementById("upload-meme").files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          tambahkanGambar(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        alert("Pilih file gambar terlebih dahulu!");
+      }
+    });
+
+    // Fungsi untuk menampilkan gambar di Wall of Memes
+    function tambahkanGambar(src) {
+      const memeContainer = document.getElementById("meme-container");
+      const img = document.createElement("img");
+      img.src = src;
+      img.classList.add("meme-item");
+      memeContainer.appendChild(img);
+    }
+  </script>
+</body>
+</html>

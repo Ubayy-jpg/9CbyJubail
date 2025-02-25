@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Nama Kocak - Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="index.html">Index</a>
+      <a href="menu.html">Home/Menu</a>
+      <a href="generator-nama.html">Generator Nama Kocak</a>
+      <a href="kuis-anime.html">Kuis Karakter Anime</a>
+      <a href="wall-of-memes.html">Wall of Memes</a>
+      <a href="countdown-liburan.html">Countdown Liburan</a>
+      <a href="random-challenge.html">Random Challenge</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Generator Nama Kocak</h1>
+    <input type="text" id="input-nama" placeholder="Masukkan nama kamu">
+    <button id="btn-generate">Generate</button>
+    <p id="hasil-nama"></p>
+  </div>
+
+  <script>
+    document.getElementById("btn-generate").addEventListener("click", function () {
+      const nama = document.getElementById("input-nama").value.trim();
+      const namaKocak = generateNamaKocak(nama);
+      document.getElementById("hasil-nama").textContent = namaKocak;
+    });
+
+    function generateNamaKocak(nama) {
+      const suffixes = ["licious", "inator", "tastic", "zilla", "pops"];
+      const randomSuffix = suffixes[Math.floor(Math.random() * suffixes.length)];
+      return `${nama}${randomSuffix}`;
+    }
+  </script>
+</body>
+</html>

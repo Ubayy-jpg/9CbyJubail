@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo Kelas 9C" class="logo">
+    <h1>Kamu kelas 9C kan?</h1>
+    <div class="buttons">
+      <button id="btn-ya">Ya</button>
+      <button id="btn-tidak">Tidak</button>
+    </div>
+  </div>
+
+  <!-- Pop-up Penolakan -->
+  <div id="popup-penolakan" class="popup">
+    <div class="popup-content">
+      <span id="close-penolakan" class="close">&times;</span>
+      <img src="stikerpenolakkan.jpg" alt="Stiker Penolakan">
+      <p id="pesan-penolakan"></p>
+    </div>
+  </div>
+
+  <!-- Pop-up Password -->
+  <div id="popup-password" class="popup">
+    <div class="popup-content">
+      <span id="close-password" class="close">&times;</span>
+      <h2>Beneran? Kalau gitu apa password nya?</h2>
+      <input type="text" id="input-password" placeholder="Masukkan password">
+      <button id="btn-submit">Submit</button>
+      <p id="pesan-error"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

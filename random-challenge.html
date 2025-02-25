@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Challenge - Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="index.html">Index</a>
+      <a href="menu.html">Home/Menu</a>
+      <a href="generator-nama.html">Generator Nama Kocak</a>
+      <a href="kuis-anime.html">Kuis Karakter Anime</a>
+      <a href="wall-of-memes.html">Wall of Memes</a>
+      <a href="countdown-liburan.html">Countdown Liburan</a>
+      <a href="random-challenge.html">Random Challenge</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Random Challenge</h1>
+    <button id="btn-challenge">Dapatkan Challenge</button>
+    <p id="hasil-challenge"></p>
+  </div>
+
+  <script>
+    document.getElementById("btn-challenge").addEventListener("click", function () {
+      const challenge = getRandomChallenge();
+      document.getElementById("hasil-challenge").textContent = challenge;
+    });
+
+    function getRandomChallenge() {
+      const challenges = [
+        "Tirukan gaya guru favoritmu selama 1 menit!",
+        "Kirim suara kucing ke grup kelas!",
+        "Post foto selfie dengan ekspresi lucu!",
+        "Buat meme tentang kelas dan bagikan!",
+      ];
+      return challenges[Math.floor(Math.random() * challenges.length)];
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Liburan - Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="index.html">Index</a>
+      <a href="menu.html">Home/Menu</a>
+      <a href="generator-nama.html">Generator Nama Kocak</a>
+      <a href="kuis-anime.html">Kuis Karakter Anime</a>
+      <a href="wall-of-memes.html">Wall of Memes</a>
+      <a href="countdown-liburan.html">Countdown Liburan</a>
+      <a href="random-challenge.html">Random Challenge</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Countdown ke Liburan</h1>
+    <p id="countdown"></p>
+  </div>
+
+  <script>
+    const liburan = new Date("2025-27-15").getTime(); // Ganti dengan tanggal liburan
+    const countdown = setInterval(() => {
+      const sekarang = new Date().getTime();
+      const selisih = liburan - sekarang;
+      const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+      document.getElementById("countdown").textContent = `${hari} hari menuju liburan!`;
+    }, 1000);
+  </script>
+</body>
+</html>

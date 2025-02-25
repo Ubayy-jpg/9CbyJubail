@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Karakter Anime - Kelas 9C</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hamburger-menu">
+    <div class="hamburger-icon">&#9776;</div>
+    <div class="menu-items">
+      <a href="index.html">Index</a>
+      <a href="menu.html">Home/Menu</a>
+      <a href="generator-nama.html">Generator Nama Kocak</a>
+      <a href="kuis-anime.html">Kuis Karakter Anime</a>
+      <a href="wall-of-memes.html">Wall of Memes</a>
+      <a href="countdown-liburan.html">Countdown Liburan</a>
+      <a href="random-challenge.html">Random Challenge</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h1>Kuis Karakter Anime Kamu Siapa?</h1>
+    <button id="btn-mulai">Mulai Kuis</button>
+    <p id="hasil-kuis"></p>
+  </div>
+
+  <script>
+    document.getElementById("btn-mulai").addEventListener("click", function () {
+      const karakter = getKarakterAnime();
+      document.getElementById("hasil-kuis").textContent = `Kamu adalah ${karakter}!`;
+    });
+
+    function getKarakterAnime() {
+      const karakter = ["Naruto", "Goku", "Luffy", "Sailor Moon", "Levi Ackerman"];
+      return karakter[Math.floor(Math.random() * karakter.length)];
+    }
+  </script>
+</body>
+</html>
